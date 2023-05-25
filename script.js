@@ -29,6 +29,15 @@ function cabo() {
     "6": "Thicknet",
     "7": "Thinnet"
    }
+
+   //Variáveis dos níveis de hierarquia
+   var nivel1 = lista;
+   var nivel2 = lista;
+   var nivel3 = lista;
+   var nivel4 = lista;
+   var nivel5;
+   var nivel6;
+
     // lista.set("0", "USB");
     // lista.set("1", "Paralelo e Serial");
     // lista.set("2", "Monomodo");
@@ -42,6 +51,7 @@ function cabo() {
     //    window.alert(key + " tem valor " + value);
     // }
     
+
     //Listas de cada cabo
     var usb = [480, "Multiuso", 2, 10, "Sem blindagem", cor, "Flexível", 0.8];
     var paralelo = [0.45, "Multiuso", 1.5, 5, "Sem blindagem", cor, "Flexível", 1.3];
@@ -51,8 +61,6 @@ function cabo() {
     var tracadoutp = [10000, "Sem multiuso", 100, 9, "Sem blindagem", cor, "Flexível", 0.5];
     var thicknet = [10, "Sem multiuso", 500, 13, "Metal", cor, "Rígido", 1];
     var thinnet = [10, "Sem multiuso", 185, 15, "Metal", cor, "Flexível", 0.64];
-
-    
 
     //Substituição das variáveis nulas por 0
     if(isNaN(velocidade)) {
@@ -80,40 +88,141 @@ function cabo() {
 
     //Verificação nível 1: velocidade
     if(cabo[0] > usb[0]) {
-        delete lista[0];
+        delete nivel1[0];
     }
     if(cabo[0] > paralelo[0]) {
-        delete lista[1];
+        delete nivel1[1];
     }
     if(cabo[0] > monomodo[0]) {
-        delete lista[2];
+        delete nivel1[2];
     }
     if(cabo[0] > multimodo[0]) {
-        delete lista[3];
+        delete nivel1[3];
     }
     if(cabo[0] > tracadostp[0]) {
-        delete lista[4];
+        delete nivel1[4];
     }
     if(cabo[0] > tracadoutp[0]) {
-        delete lista[5];
+        delete nivel1[5];
     }
     if(cabo[0] > thicknet[0]) {
-        delete lista[6];
+        delete nivel1[6];
     }
     if(cabo[0] > thinnet[0]) {
-        delete lista[7];
+        delete nivel1[7];
     }
 
-    
+    //Verificação nível 2: multimodo
+    if(cabo[1] == "Multiuso") {
+        delete nivel2[2];
+        delete nivel2[3];
+        delete nivel2[4];
+        delete nivel2[5];
+        delete nivel2[6];
+        delete nivel2[7];
+    }
 
-    for (const key of Object.keys(lista)) {
-        window.alert(key + ":" + lista[key])
+    //Verificação nível 3: distância
+    if(cabo[2] > usb[2]) {
+        delete nivel3[0];
+    }
+    if(cabo[2] > paralelo[2]) {
+        delete nivel3[1];
+    }
+    if(cabo[2] > monomodo[2]) {
+        delete nivel3[2];
+    }
+    if(cabo[2] > multimodo[2]) {
+        delete nivel3[3];
+    }
+    if(cabo[2] > tracadostp[2]) {
+        delete nivel3[4];
+    }
+    if(cabo[2] > tracadoutp[2]) {
+        delete nivel3[5];
+    }
+    if(cabo[2] > thicknet[2]) {
+        delete nivel3[6];
+    }
+    if(cabo[2] > thinnet[2]) {
+        delete nivel3[7];
     }
     
+    //Verificação nível 4: preço
+    if(cabo[3] > usb[3]) {
+        delete nivel4[0];
+    }
+    if(cabo[3] > paralelo[3]) {
+        delete nivel4[1];
+    }
+    if(cabo[3] > monomodo[3]) {
+        delete nivel4[2];
+    }
+    if(cabo[3] > multimodo[3]) {
+        delete nivel4[3];
+    }
+    if(cabo[3] > tracadostp[3]) {
+        delete nivel4[4];
+    }
+    if(cabo[3] > tracadoutp[3]) {
+        delete nivel4[5];
+    }
+    if(cabo[3] > thicknet[3]) {
+        delete nivel4[6];
+    }
+    if(cabo[3] > thinnet[3]) {
+        delete nivel4[7];
+    }
+
+    //Verificação nível 5: Blindagem, cor
+    if (cabo[4] == "metal") {  
+        nivel5 = {
+            "4": "Traçado (STP)",
+            "6": "Thicknet",
+            "7": "Thinnet"
+        }     
+    } 
+    if (cabo[4] == "vidro") {
+        nivel5 = {
+            "2": "Monomodo",
+            "3": "Multimodo"
+        } 
+    } 
+    if (cabo[4] == "Sem blindagem") {
+        nivel5 = {
+            "0": "USB",
+            "1": "Paralelo e Serial",
+            "5": "Traçado (UTP)"
+        }  
+    }
+
+    //Verificação nível 6: Rigidez
+    if (cabo[6] == "Rígido") {
+        nivel5 = {
+            "4": "Traçado (STP)",
+            "6": "Thicknet"
+        }
+    }
+    if (cabo[6] == "Flexível") {
+        nivel5 = {
+            "0": "USB",
+            "1": "Paralelo e Serial",
+            "2": "Monomodo",
+            "3": "Multimodo",
+            "5": "Traçado (UTP)",
+            "7": "Thinnet"
+        }
+    }
+
+    for (const key of Object.keys(nivel5)) {
+        window.alert(key + ":" + nivel5[key])
+    }
     
-    window.alert(length(lista));
+    window.alert(nivel5);
+    
+    
     
     
 
-
+//comentário
 }

@@ -10,37 +10,40 @@
 <body>
     <form action="" method="post" id="iform">
         <h1>Informe as características do cabo</h1>
-
-        <label for="ivelocidade">Velocidade: </label>
-        <input type="text" name="velocidade" id="ivelocidade" placeholder="Máximo 40.000 Mbps" class="formtext">
-        <br>
+     
+        <p>
+            <label for="ivelocidade">Velocidade: </label>
+            <input type="number" name="velocidade" id="ivelocidade" min="0" max="40000" placeholder="Máximo 40.000 Mbps" class="formtext">
+        </p>
 
         <fieldset>
             <legend>Multiuso</legend>
             <label for="isimmult">Sim</label>
-            <input type="radio" name="multiuso" id="isimmult" checked value="Multiuso">
+            <input type="radio" name="multiuso" id="isimmult"  value="Multiuso">
             <label for="inaomult">Não</label>
-            <input type="radio" name="multiuso" id="inaomult" value="Sem multiuso">
+            <input type="radio" name="multiuso" id="inaomult" value="Sem multiuso" checked>
         </fieldset>
 
-        <label for="idistancia">Distância: </label>
-        <input type="text" name="distancia" id="idistancia" placeholder="Máximo 100.000(em metros)" class="formtext">
-        <br>
+        <p>
+            <label for="idistancia">Distância: </label>
+            <input type="number" name="distancia" id="idistancia" min="0" max="100000" placeholder="Máximo 100.000(em metros)" class="formtext">
+        </p>
 
-        <label for="ipreco">Preço: </label>
-        <input type="text" name="preco" id="ipreco" placeholder="R$ 5 a 15 por metro" class="formtext">
-        <br>
+        <p>
+            <label for="ipreco">Preço: </label>
+            <input type="number" name="preco" id="ipreco" min="5" max="15" placeholder="R$ 5 a 15 por metro" class="formtext">
+        </p>
 
         <fieldset>
             <legend>Blindagem</legend>
             <label for="imetal">Metal</label>
-            <input type="radio" name="blindagem" id="imetal" checked value="metal">
+            <input type="radio" name="blindagem" id="imetal" value="metal">
 
             <label for="ividro">Vidro</label>
             <input type="radio" name="blindagem" id="ividro" value="vidro">
 
             <label for="isem">Sem</label>
-            <input type="radio" name="blindagem" id="isem" value="Sem blindagem">
+            <input type="radio" name="blindagem" id="isem" value="Sem blindagem" checked >
         </fieldset>
         
         <fieldset>
@@ -73,9 +76,10 @@
             <input type="radio" name="rigidez" id="iflexivel" value="Flexível">
         </fieldset>
 
-        <label for="iespessura">Espessura: </label>
-        <input type="text" name="espessura" id="iespessura" placeholder="0,1 a 1cm" class="formtext">
-        <br>
+        <p>
+            <label for="iespessura">Espessura: </label>
+            <input type="number" name="espessura" id="iespessura" min="1" max="10" placeholder="1 a 10 mm" class="formtext">
+        </p>
 
         <p>
             <input type="button" value="Verificar" onclick="cabo()">
