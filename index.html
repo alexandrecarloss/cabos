@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="shortcut icon" href="img/tiposdecabo.jpg" type="image/x-icon">
+    <title>Tipos de Cabos de Rede</title>
+</head>
+<body>
+    <form action="" method="post" id="iform">
+        <h1>Informe as características do cabo</h1>
+
+        <label for="ivelocidade">Velocidade: </label>
+        <input type="text" name="velocidade" id="ivelocidade" placeholder="Máximo 40.000 Mbps" class="formtext">
+        <br>
+
+        <fieldset>
+            <legend>Multiuso</legend>
+            <label for="isimmult">Sim</label>
+            <input type="radio" name="multiuso" id="isimmult" checked value="Multiuso">
+            <label for="inaomult">Não</label>
+            <input type="radio" name="multiuso" id="inaomult" value="Sem multiuso">
+        </fieldset>
+
+        <label for="idistancia">Distância: </label>
+        <input type="text" name="distancia" id="idistancia" placeholder="Máximo 100.000(em metros)" class="formtext">
+        <br>
+
+        <label for="ipreco">Preço: </label>
+        <input type="text" name="preco" id="ipreco" placeholder="R$ 5 a 15 por metro" class="formtext">
+        <br>
+
+        <fieldset>
+            <legend>Blindagem</legend>
+            <label for="imetal">Metal</label>
+            <input type="radio" name="blindagem" id="imetal" checked value="metal">
+
+            <label for="ividro">Vidro</label>
+            <input type="radio" name="blindagem" id="ividro" value="vidro">
+
+            <label for="isem">Sem</label>
+            <input type="radio" name="blindagem" id="isem" value="Sem blindagem">
+        </fieldset>
+        
+        <fieldset>
+            <legend>Cor</legend>
+            <label for="ipreto">Preto</label>
+            <input type="radio" name="cor" id="ipreto" checked value="Preto">
+            <label for="ibranco">Branco</label>
+            <input type="radio" name="cor" id="ibranco" value="Branco">
+            <label for="iverde">Verde</label>
+            <input type="radio" name="cor" id="iverde" value="Verde">
+            <label for="ivermelho">Vermelho</label>
+            <input type="radio" name="cor" id="ivermelho" value="Vermelho">
+            <label for="iazul">Azul</label>
+            <input type="radio" name="cor" id="iazul" value="Azul">
+            <label for="iamarelo">Amarelo</label>
+            <input type="radio" name="cor" id="iamarelo" value="Amarelo">
+            <label for="icinza">Cinza</label>
+            <input type="radio" name="cor" id="icinza" value="Cinza">
+            <label for="ililas">Lilás</label>
+            <input type="radio" name="cor" id="ililas" value="Lilás">
+            <label for="ilaranja">Laranja</label>
+            <input type="radio" name="cor" id="ilaranja" value="Laranja">
+        </fieldset>
+
+        <fieldset>
+            <legend>Rigidez</legend>
+            <label for="irigido">Rígido</label>
+            <input type="radio" name="rigidez" id="irigido" checked value="Rígido">
+            <label for="iflexivel">Flexível</label>
+            <input type="radio" name="rigidez" id="iflexivel" value="Flexível">
+        </fieldset>
+
+        <label for="iespessura">Espessura: </label>
+        <input type="text" name="espessura" id="iespessura" placeholder="0,1 a 1cm" class="formtext">
+        <br>
+
+        <p>
+            <input type="button" value="Verificar" onclick="cabo()">
+            <input type="reset" value="Limpar">
+        </p>
+    </form>
+
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,23 @@
+@charset "UTF-8";
+
+body {
+    background-image: url(img/tiposdecabo.jpg);
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+    height: 100vh;
+}
+
+#iform {
+    background-image: linear-gradient(to top, rgb(65, 46, 109),    rgba(46, 72, 109, 0.596));
+    padding: 50px;
+    display: block;
+    margin: auto;
+    width: 40vw;
+    height: 80vh;
+    border-radius: 20px;
+}
+
+.formtext {
+    width: 100%;
+}
