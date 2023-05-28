@@ -20,25 +20,26 @@ function cabo() {
 
    //var lista = new Map();
    var todososcabos = ["USB", "Paralelo e Serial", "Monomodo", "Multimodo", "Traçado (STP)", "Traçado (UTP)", "Thicknet", "Thinnet"];
-   let lista = {
-    "0": "USB",
-    "1": "Paralelo e Serial",
-    "2": "Monomodo",
-    "3": "Multimodo",
-    "4": "Traçado (STP)",
-    "5": "Traçado (UTP)",
-    "6": "Thicknet",
-    "7": "Thinnet"
-   }
+   var lista = ["USB", "Paralelo e Serial", "Monomodo", "Multimodo", "Traçado (STP)", "Traçado (UTP)", "Thicknet", "Thinnet"]
 
    //Variáveis dos níveis de hierarquia
-   var nivel1 = lista;
-   var nivel2 = lista;
-   var nivel3 = lista;
-   var nivel4 = lista;
-   var nivel5;
-   var nivel6;
-   var final;
+    var nivel1 = [];
+    var nivel2 = [];
+    var nivel3 = [];
+    var nivel4 = [];
+    var nivel5 = [];
+    var nivel6 = [];
+   for (var i = 0; i <= 7; i++) {
+        nivel1[i] = lista[i];
+        nivel2[i] = lista[i];
+        nivel3[i] = lista[i];
+        nivel4[i] = lista[i];
+        nivel5[i] = lista[i];
+        nivel6[i] = lista[i];
+   }
+   
+   
+   var final = [];
 
     // lista.set("0", "USB");
     // lista.set("1", "Paralelo e Serial");
@@ -90,157 +91,164 @@ function cabo() {
 
     //Verificação nível 1: velocidade
     if(cabo[0] > usb[0]) {
-        delete nivel1[0];
+        nivel1.splice(nivel1.indexOf("USB"), 1);
     }
     if(cabo[0] > paralelo[0]) {
-        delete nivel1[1];
+        nivel1.splice(nivel1.indexOf("Paralelo e Serial"), 1);
     }
     if(cabo[0] > monomodo[0]) {
-        delete nivel1[2];
+        nivel1.splice(nivel1.indexOf("Monomodo"), 1);
     }
     if(cabo[0] > multimodo[0]) {
-        delete nivel1[3];
+        nivel1.splice(nivel1.indexOf("Multimodo"), 1);
     }
     if(cabo[0] > tracadostp[0]) {
-        delete nivel1[4];
+        nivel1.splice(nivel1.indexOf("Traçado (STP)"), 1);
     }
     if(cabo[0] > tracadoutp[0]) {
-        delete nivel1[5];
+        nivel1.splice(nivel1.indexOf("Traçado (UTP)"), 1);
     }
     if(cabo[0] > thicknet[0]) {
-        delete nivel1[6];
+        nivel1.splice(nivel1.indexOf("Thicknet"), 1);
     }
     if(cabo[0] > thinnet[0]) {
-        delete nivel1[7];
+        nivel1.splice(nivel1.indexOf("Thinnet"), 1);
     }
 
     //Verificação nível 2: multimodo
     if(cabo[1] == "Multiuso") {
-        delete nivel2[2];
-        delete nivel2[3];
-        delete nivel2[4];
-        delete nivel2[5];
-        delete nivel2[6];
-        delete nivel2[7];
+        nivel2.splice(nivel2.indexOf("Monomodo"), 1);
+        nivel2.splice(nivel2.indexOf("Multimodo"), 1);
+        nivel2.splice(nivel2.indexOf("Traçado (STP)"), 1);
+        nivel2.splice(nivel2.indexOf("Traçado (UTP)"), 1);
+        nivel2.splice(nivel2.indexOf("Thicknet"), 1);
+        nivel2.splice(nivel2.indexOf("Thinnet"), 1)
     }
-
+    if (cabo[1] == "Sem multiuso") {
+        nivel2.splice(nivel2.indexOf("USB"), 1);
+        nivel2.splice(nivel2.indexOf("Paralelo e Serial"), 1);
+    }
+   
     //Verificação nível 3: distância
     if(cabo[2] > usb[2]) {
-        delete nivel3[0];
+        nivel3.splice(nivel3.indexOf("USB"), 1);
     }
     if(cabo[2] > paralelo[2]) {
-        delete nivel3[1];
+        nivel3.splice(nivel3.indexOf("Paralelo e Serial"), 1);
     }
     if(cabo[2] > monomodo[2]) {
-        delete nivel3[2];
+        nivel3.splice(nivel3.indexOf("Monomodo"), 1);
     }
     if(cabo[2] > multimodo[2]) {
-        delete nivel3[3];
+        nivel3.splice(nivel3.indexOf("Multimodo"), 1);
     }
     if(cabo[2] > tracadostp[2]) {
-        delete nivel3[4];
+        nivel3.splice(nivel3.indexOf("Traçado (STP)"), 1);
     }
     if(cabo[2] > tracadoutp[2]) {
-        delete nivel3[5];
+        nivel3.splice(nivel3.indexOf("Traçado (UTP)"), 1);
     }
     if(cabo[2] > thicknet[2]) {
-        delete nivel3[6];
+        nivel3.splice(nivel3.indexOf("Thicknet"), 1);
     }
     if(cabo[2] > thinnet[2]) {
-        delete nivel3[7];
+        nivel3.splice(nivel3.indexOf("Thinnet"), 1)
     }
-    
+
     //Verificação nível 4: preço
     if(cabo[3] > usb[3]) {
-        delete nivel4[0];
+        nivel4.splice(nivel4.indexOf("USB"), 1);
     }
     if(cabo[3] > paralelo[3]) {
-        delete nivel4[1];
+        nivel4.splice(nivel4.indexOf("Paralelo e Serial"), 1);
     }
     if(cabo[3] > monomodo[3]) {
-        delete nivel4[2];
+        nivel4.splice(nivel4.indexOf("Monomodo"), 1);
     }
     if(cabo[3] > multimodo[3]) {
-        delete nivel4[3];
+        nivel4.splice(nivel4.indexOf("Multimodo"), 1);
     }
     if(cabo[3] > tracadostp[3]) {
-        delete nivel4[4];
+        nivel4.splice(nivel4.indexOf("Traçado (STP)"), 1);
     }
     if(cabo[3] > tracadoutp[3]) {
-        delete nivel4[5];
+        nivel4.splice(nivel4.indexOf("Traçado (UTP)"), 1);
     }
     if(cabo[3] > thicknet[3]) {
-        delete nivel4[6];
+        nivel4.splice(nivel4.indexOf("Thicknet"), 1);
     }
     if(cabo[3] > thinnet[3]) {
-        delete nivel4[7];
+        nivel4.splice(nivel4.indexOf("Thinnet"), 1);
     }
 
     //Verificação nível 5: Blindagem, cor
     if (cabo[4] == "metal") {  
-        nivel5 = {
-            "4": "Traçado (STP)",
-            "6": "Thicknet",
-            "7": "Thinnet"
-        }     
+        nivel5.splice(nivel5.indexOf("USB"), 1);
+        nivel5.splice(nivel5.indexOf("Paralelo e Serial"), 1);
+        nivel5.splice(nivel5.indexOf("Monomodo"), 1);
+        nivel5.splice(nivel5.indexOf("Multimodo"), 1);
+        nivel5.splice(nivel5.indexOf("Traçado (UTP)"), 1);    
     } 
     if (cabo[4] == "vidro") {
-        nivel5 = {
-            "2": "Monomodo",
-            "3": "Multimodo"
-        } 
+        nivel5.splice(nivel5.indexOf("USB"), 1);
+        nivel5.splice(nivel5.indexOf("Paralelo e Serial"), 1);
+        nivel5.splice(nivel5.indexOf("Traçado (STP)"), 1);
+        nivel5.splice(nivel5.indexOf("Traçado (UTP)"), 1);
+        nivel5.splice(nivel5.indexOf("Thicknet"), 1);
+        nivel5.splice(nivel5.indexOf("Thinnet"), 1)
     } 
     if (cabo[4] == "Sem blindagem") {
-        nivel5 = {
-            "0": "USB",
-            "1": "Paralelo e Serial",
-            "5": "Traçado (UTP)"
-        }  
+        nivel5.splice(nivel5.indexOf("Monomodo"), 1);
+        nivel4.splice(nivel5.indexOf("Multimodo"), 1);
+        nivel5.splice(nivel5.indexOf("Traçado (STP)"), 1);
+        nivel5.splice(nivel5.indexOf("Thicknet"), 1);
+        nivel5.splice(nivel5.indexOf("Thinnet"), 1)
     }
 
     //Verificação nível 6: Rigidez
     if (cabo[6] == "Rígido") {
-        nivel6 = {
-            "4": "Traçado (STP)",
-            "6": "Thicknet"
-        }
+        nivel6.splice(nivel6.indexOf("USB"), 1);
+        nivel6.splice(nivel6.indexOf("Paralelo e Serial"), 1);
+        nivel6.splice(nivel6.indexOf("Monomodo"), 1);
+        nivel6.splice(nivel6.indexOf("Multimodo"), 1);
+        nivel6.splice(nivel6.indexOf("Traçado (UTP)"), 1);
+        nivel6.splice(nivel6.indexOf("Thinnet"), 1);
     }
     if (cabo[6] == "Flexível") {
-        nivel6 = {
-            "0": "USB",
-            "1": "Paralelo e Serial",
-            "2": "Monomodo",
-            "3": "Multimodo",
-            "5": "Traçado (UTP)",
-            "7": "Thinnet"
-        }
+        nivel6.splice(nivel6.indexOf("Traçado (STP)"), 1);
+        nivel6.splice(nivel6.indexOf("Thicknet"), 1);
     }
     
-    //final = nivel1.get("0");
-
-    final = [];
-    for (const key of Object.keys(nivel1)) {
-        if (final.indexOf(nivel1[key]) == -1) {
-            final.push(nivel1[key]);
+    for (var i = 0; i <= 7; i++) {
+        if (nivel1.indexOf("USB") == 0 ) {
+            
         }
     }
+    //final = nivel1.get("0");
 
-    if(final.length > 0) {
-       todososcabos.forEach(function (item, indice, array) {
-            if((final.indexOf(item) != -1) && (item == nivel2[indice])){
+    
+    // for (const key of Object.keys(nivel1)) {
+    //     if (final.indexOf(nivel1[key]) == -1) {
+    //         final.push(nivel1[key]);
+    //     }
+    // }
+
+    // if(final.length > 0) {
+    //    todososcabos.forEach(function (item, indice, array) {
+    //         if((final.indexOf(item) != -1) && (item == nivel2[indice])){
                 
-            };
-        });
-    }
+    //         };
+    //     });
+    // }
 
-    if(final.length > 0) {
-        todososcabos.forEach(function (item, indice, array) {
-             if((final.indexOf(item) != -1) && (item == nivel3[indice])){
-                 window.alert("item " + item);
-                 window.alert("indice " + indice);
-             };
-         });
-     }
+    // if(final.length > 0) {
+    //     todososcabos.forEach(function (item, indice, array) {
+    //          if((final.indexOf(item) != -1) && (item == nivel3[indice])){
+    //              window.alert("item " + item);
+    //              window.alert("indice " + indice);
+    //          };
+    //      });
+    //  }
     
     //     }
     //     // window.alert("item " + item);
@@ -256,8 +264,13 @@ function cabo() {
     //     // }
     // }
 
-    window.alert(final);
-    window.alert(typeof(final));
+    window.alert("1: " + nivel1);
+    window.alert("2: " + nivel2);
+    window.alert("3: " + nivel3);
+    window.alert("4: " + nivel4);
+    window.alert("5: " + nivel5);
+    window.alert("6: " + nivel6);
+    //window.alert(typeof(nivel1));
     // i = [1, "a"]
     // i.forEach(function (item, indice, array) {
     //     window.alert("item " + item);
