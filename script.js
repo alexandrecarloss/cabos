@@ -17,11 +17,7 @@ function cabo() {
     var cabo = []; 
 
     //Lista dos tipos de cabo
-   // var lista = ["USB", "Paralelo e Serial", "Monomodo", "Multimodo", "Traçado (STP)", "Traçado (UTP)", "Thicknet", "Thinnet"];
-
-   //var lista = new Map();
-   var todososcabos = ["USB", "Paralelo e Serial", "Monomodo", "Multimodo", "Traçado (STP)", "Traçado (UTP)", "Thicknet", "Thinnet"];
-   var lista = ["USB", "Paralelo e Serial", "Monomodo", "Multimodo", "Traçado (STP)", "Traçado (UTP)", "Thicknet", "Thinnet"]
+   var lista = ["USB", "Paralelo e Serial", "Monomodo", "Multimodo", "Traçado (STP)", "Traçado (UTP)", "Thicknet", "Thinnet"];
 
    //Variáveis dos níveis de hierarquia
     var nivel1 = [];
@@ -228,58 +224,50 @@ function cabo() {
         nivel7.splice(nivel7.indexOf("Thinnet"), 1);
     }
     
-    // for (var i = 0; i <= 7; i++) {
-    //     if (nivel1.indexOf("USB") == 0 ) {
-            
-    //     }
-    // }
-    //final = nivel1.get("0");
+    //Teste dos níveis
+    // window.alert("1: " + nivel1);
+    // window.alert("2: " + nivel2);
+    // window.alert("3: " + nivel3);
+    // window.alert("4: " + nivel4);
+    // window.alert("5: " + nivel5);
+    // window.alert("6: " + nivel6);
+    // window.alert("7: " + nivel7);
 
-    
-    // for (const key of Object.keys(nivel1)) {
-    //     if (final.indexOf(nivel1[key]) == -1) {
-    //         final.push(nivel1[key]);
-    //     }
-    // }
+    //Verificação dos cabos presentes em todos os níveis, se o índice for diferente de -1 em todos o valor é adicionado à lista final
+    if(((nivel1.indexOf("USB")) != -1) && ((nivel2.indexOf("USB")) != -1) && ((nivel3.indexOf("USB")) != -1) && ((nivel4.indexOf("USB")) != -1) && ((nivel5.indexOf("USB")) != -1) && ((nivel6.indexOf("USB")) != -1) && ((nivel7.indexOf("USB")) != -1)) {
+        final.push("USB");
+    }
+    if(((nivel1.indexOf("Paralelo e Serial")) != -1) && ((nivel2.indexOf("Paralelo e Serial")) != -1) && ((nivel3.indexOf("Paralelo e Serial")) != -1) && ((nivel4.indexOf("Paralelo e Serial")) != -1) && ((nivel5.indexOf("Paralelo e Serial")) != -1) && ((nivel6.indexOf("Paralelo e Serial")) != -1) && ((nivel7.indexOf("Paralelo e Serial")) != -1)) {
+        final.push("Paralelo e Serial");
+    }
+    if(((nivel1.indexOf("Monomodo")) != -1) && ((nivel2.indexOf("Monomodo")) != -1) && ((nivel3.indexOf("Monomodo")) != -1) && ((nivel4.indexOf("Monomodo")) != -1) && ((nivel5.indexOf("Monomodo")) != -1) && ((nivel6.indexOf("Monomodo")) != -1) && ((nivel7.indexOf("Monomodo")) != -1)) {
+        final.push("Monomodo");
+    }
+    if(((nivel1.indexOf("Multimodo")) != -1) && ((nivel2.indexOf("Multimodo")) != -1) && ((nivel3.indexOf("Multimodo")) != -1) && ((nivel4.indexOf("Multimodo")) != -1) && ((nivel5.indexOf("Multimodo")) != -1) && ((nivel6.indexOf("Multimodo")) != -1) && ((nivel7.indexOf("Multimodo")) != -1)) {
+        final.push("Multimodo");
+    }
+    if(((nivel1.indexOf("Traçado (STP)")) != -1) && ((nivel2.indexOf("Traçado (STP)")) != -1) && ((nivel3.indexOf("Traçado (STP)")) != -1) && ((nivel4.indexOf("Traçado (STP)")) != -1) && ((nivel5.indexOf("Traçado (STP)")) != -1) && ((nivel6.indexOf("Traçado (STP)")) != -1) && ((nivel7.indexOf("Traçado (STP)")) != -1)) {
+        final.push("Traçado (STP)");
+    }
+    if(((nivel1.indexOf("Traçado (UTP)")) != -1) && ((nivel2.indexOf("Traçado (UTP)")) != -1) && ((nivel3.indexOf("Traçado (UTP)")) != -1) && ((nivel4.indexOf("Traçado (UTP)")) != -1) && ((nivel5.indexOf("Traçado (UTP)")) != -1) && ((nivel6.indexOf("Traçado (UTP)")) != -1) && ((nivel7.indexOf("Traçado (UTP)")) != -1)) {
+        final.push("Traçado (UTP)");
+    }
+    if(((nivel1.indexOf("Thicknet")) != -1) && ((nivel2.indexOf("Thicknet")) != -1) && ((nivel3.indexOf("Thicknet")) != -1) && ((nivel4.indexOf("Thicknet")) != -1) && ((nivel5.indexOf("Thicknet")) != -1) && ((nivel6.indexOf("Thicknet")) != -1) && ((nivel7.indexOf("Thicknet")) != -1)) {
+        final.push("Thicknet");
+    }
+    if(((nivel1.indexOf("Thinnet")) != -1) && ((nivel2.indexOf("Thinnet")) != -1) && ((nivel3.indexOf("Thinnet")) != -1) && ((nivel4.indexOf("Thinnet")) != -1) && ((nivel5.indexOf("Thinnet")) != -1) && ((nivel6.indexOf("Thinnet")) != -1) && ((nivel7.indexOf("Thinnet")) != -1)) {
+        final.push("Thinnet");
+    }
+    window.alert(final);
+    // window.alert(nivel1.indexOf("USB"));
+    // window.alert(nivel2.indexOf("USB"));
+    // window.alert(nivel3.indexOf("USB"));
+    // window.alert(nivel4.indexOf("USB"));
+    // window.alert(nivel5.indexOf("USB"));
+    // window.alert(nivel6.indexOf("USB"));
+    // window.alert(nivel7.indexOf("USB"));
 
-    // if(final.length > 0) {
-    //    todososcabos.forEach(function (item, indice, array) {
-    //         if((final.indexOf(item) != -1) && (item == nivel2[indice])){
-                
-    //         };
-    //     });
-    // }
 
-    // if(final.length > 0) {
-    //     todososcabos.forEach(function (item, indice, array) {
-    //          if((final.indexOf(item) != -1) && (item == nivel3[indice])){
-    //              window.alert("item " + item);
-    //              window.alert("indice " + indice);
-    //          };
-    //      });
-    //  }
-    
-    //     }
-    //     // window.alert("item " + item);
-    //     // window.alert("indice " + indice);
-    // });
-    // for (const key of Object.keys(nivel2)) {
-    //     window.alert(key + ":" + nivel2[key]);
-    //     if ((final.indexOf(nivel2[key]) != -1) && (final.indexOf(nivel2[key]) != -1)) {
-    //         final.splice(nivel2[key], 1);
-    //     }
-    //     // if (final.has(nivel2[key]) != -1) {
-    //     //     final.push(nivel2[key]);
-    //     // }
-    // }
-
-    window.alert("1: " + nivel1);
-    window.alert("2: " + nivel2);
-    window.alert("3: " + nivel3);
-    window.alert("4: " + nivel4);
-    window.alert("5: " + nivel5);
-    window.alert("6: " + nivel6);
-    window.alert("7: " + nivel7);
     //window.alert(typeof(nivel1));
     // i = [1, "a"]
     // i.forEach(function (item, indice, array) {
@@ -287,22 +275,4 @@ function cabo() {
     //     window.alert("indice " + indice);
     // });
     // window.alert(i.indexOf(0));
-
-    // for (const key of Object.keys(nivel1)) {
-    //     window.alert(key + ":" + nivel1[key])
-    // }
-    // for (const key of Object.keys(final)) {
-    //     window.alert(key + ":" + final[key])
-    // }
-
-    
-    //window.alert(nivel1.size);
-    // var i = nivel1.has("1");
-    // window.alert(i);
-    
-    
-    
-    
-
-//comentário
 }
