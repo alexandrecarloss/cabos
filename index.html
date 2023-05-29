@@ -76,10 +76,13 @@
             <input type="radio" name="rigidez" id="iflexivel" value="Flexível">
         </fieldset>
 
-        <p>
-            <label for="iespessura">Espessura: </label>
-            <input type="number" name="espessura" id="iespessura" min="1" max="10" placeholder="1 a 10 mm" class="formtext">
-        </p>
+        <fieldset>
+            <legend>Espessura</legend>
+            <label for="ifino">Fino</label>
+            <input type="radio" name="espessura" id="ifino" checked value="Fino">
+            <label for="imedio">Médio</label>
+            <input type="radio" name="espessura" id="imedio" value="Médio">
+        </fieldset>
 
         <p>
             <input type="button" value="Verificar" onclick="cabo()">
