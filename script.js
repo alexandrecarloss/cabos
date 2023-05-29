@@ -223,15 +223,6 @@ function cabo() {
         nivel7.splice(nivel7.indexOf("Traçado (STP)"), 1);
         nivel7.splice(nivel7.indexOf("Thinnet"), 1);
     }
-    
-    //Teste dos níveis
-    // window.alert("1: " + nivel1);
-    // window.alert("2: " + nivel2);
-    // window.alert("3: " + nivel3);
-    // window.alert("4: " + nivel4);
-    // window.alert("5: " + nivel5);
-    // window.alert("6: " + nivel6);
-    // window.alert("7: " + nivel7);
 
     //Verificação dos cabos presentes em todos os níveis, se o índice for diferente de -1 em todos o valor é adicionado à lista final
     if(((nivel1.indexOf("USB")) != -1) && ((nivel2.indexOf("USB")) != -1) && ((nivel3.indexOf("USB")) != -1) && ((nivel4.indexOf("USB")) != -1) && ((nivel5.indexOf("USB")) != -1) && ((nivel6.indexOf("USB")) != -1) && ((nivel7.indexOf("USB")) != -1)) {
@@ -258,21 +249,13 @@ function cabo() {
     if(((nivel1.indexOf("Thinnet")) != -1) && ((nivel2.indexOf("Thinnet")) != -1) && ((nivel3.indexOf("Thinnet")) != -1) && ((nivel4.indexOf("Thinnet")) != -1) && ((nivel5.indexOf("Thinnet")) != -1) && ((nivel6.indexOf("Thinnet")) != -1) && ((nivel7.indexOf("Thinnet")) != -1)) {
         final.push("Thinnet");
     }
-    window.alert(final);
-    // window.alert(nivel1.indexOf("USB"));
-    // window.alert(nivel2.indexOf("USB"));
-    // window.alert(nivel3.indexOf("USB"));
-    // window.alert(nivel4.indexOf("USB"));
-    // window.alert(nivel5.indexOf("USB"));
-    // window.alert(nivel6.indexOf("USB"));
-    // window.alert(nivel7.indexOf("USB"));
 
-
-    //window.alert(typeof(nivel1));
-    // i = [1, "a"]
-    // i.forEach(function (item, indice, array) {
-    //     window.alert("item " + item);
-    //     window.alert("indice " + indice);
-    // });
-    // window.alert(i.indexOf(0));
+    //Alerta com o possível cabo formado pelas características
+    if(final.length == 0) {
+        window.alert("Nenhum cabo atende aos requisitos");
+    } else if (final.length == 1) {
+        window.alert("O cabo formado por essas características é: " + final);
+    } else {
+        window.alert("Os cabos formados por essas características são: " + final);
+    }
 }
