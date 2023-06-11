@@ -1,95 +1,133 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
-    <link rel="shortcut icon" href="img/tiposdecabo.jpg" type="image/x-icon">
-    <title>Tipos de Cabos de Rede</title>
-</head>
-<body>
-    <form action="" method="post" id="iform">
-        <h1>Informe as características do cabo</h1>
-     
-        <p>
-            <label for="ivelocidade">Velocidade: </label>
-            <input type="number" name="velocidade" id="ivelocidade" min="0" max="40000" placeholder="Máximo 40.000 Mbps" class="formtext">
-        </p>
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Cabos de Rede</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap"
+    />
+    <link
+      type="image/png"
+      sizes="16x16"
+      rel="icon"
+      href="imgs/icons8-cabo-de-rede-16.png"
+    />
+  </head>
+  <body>
+    <div class="container">
+      <header>
+        <h1>Informe as especificações</h1>
+      </header>
 
-        <fieldset>
-            <legend>Multiuso</legend>
-            <label for="isimmult">Sim</label>
-            <input type="radio" name="multiuso" id="isimmult"  value="Multiuso">
-            <label for="inaomult">Não</label>
-            <input type="radio" name="multiuso" id="inaomult" value="Sem multiuso" checked>
-        </fieldset>
+      <form action="" id="form" method="get">
+        <div class="form-typed">
+          <label for="velocidade">Velocidade</label>
+          <input type="number" id="velocidade" placeholder="Max. 40,000Mbps" />
+          <i><ion-icon class="error-icon" name="alert-circle"></ion-icon></i>
+          <i
+            ><ion-icon class="success-icon" name="checkmark-circle"></ion-icon
+          ></i>
+          <small>Insira um valor válido!</small>
+        </div>
 
-        <p>
-            <label for="idistancia">Distância: </label>
-            <input type="number" name="distancia" id="idistancia" min="0" max="100000" placeholder="Máximo 100.000(em metros)" class="formtext">
-        </p>
+        <div class="form-typed">
+          <label for="comprimento">Comprimento</label>
+          <input type="number" id="comprimento" placeholder="Max. 100,000m" />
+          <i><ion-icon class="error-icon" name="alert-circle"></ion-icon></i>
+          <i
+            ><ion-icon class="success-icon" name="checkmark-circle"></ion-icon
+          ></i>
+          <small>Insira um valor válido!</small>
+        </div>
 
-        <p>
-            <label for="ipreco">Preço: </label>
-            <input type="number" name="preco" id="ipreco" min="5" max="15" placeholder="R$ 5 a 15 por metro" class="formtext">
-        </p>
+        <div class="form-typed">
+          <label for="preco">Preço</label>
+          <input type="number" id="preco" placeholder="5 - 15 por metro" />
+          <i><ion-icon class="error-icon" name="alert-circle"></ion-icon></i>
+          <i
+            ><ion-icon class="success-icon" name="checkmark-circle"></ion-icon
+          ></i>
+          <small>Insira um valor válido!</small>
+        </div>
 
-        <fieldset>
-            <legend>Blindagem</legend>
-            <label for="imetal">Metal</label>
-            <input type="radio" name="blindagem" id="imetal" value="metal">
+        <div class="form-select">
+          <div class="selection">
+            <label for="multiuso">Multiuso</label>
+            <select name="multiuso" id="multiuso">
+              <option value="Multiuso">Sim</option>
+              <option value="Sem multiuso">Nao</option>
+            </select>
+          </div>
 
-            <label for="ividro">Vidro</label>
-            <input type="radio" name="blindagem" id="ividro" value="vidro">
+          <div class="selection">
+            <label for="blindagem">Blindagem</label>
+            <select name="blindagem" id="blindagem">
+              <option value="Sem blindagem">Sem blindagem</option>
+              <option value="metal">Metal</option>
+              <option value="vidro">Vidro</option>
+            </select>
+          </div>
 
-            <label for="isem">Sem</label>
-            <input type="radio" name="blindagem" id="isem" value="Sem blindagem" checked >
-        </fieldset>
-        
-        <fieldset>
-            <legend>Cor</legend>
-            <label for="ipreto">Preto</label>
-            <input type="radio" name="cor" id="ipreto" checked value="Preto">
-            <label for="ibranco">Branco</label>
-            <input type="radio" name="cor" id="ibranco" value="Branco">
-            <label for="iverde">Verde</label>
-            <input type="radio" name="cor" id="iverde" value="Verde">
-            <label for="ivermelho">Vermelho</label>
-            <input type="radio" name="cor" id="ivermelho" value="Vermelho">
-            <label for="iazul">Azul</label>
-            <input type="radio" name="cor" id="iazul" value="Azul">
-            <label for="iamarelo">Amarelo</label>
-            <input type="radio" name="cor" id="iamarelo" value="Amarelo">
-            <label for="icinza">Cinza</label>
-            <input type="radio" name="cor" id="icinza" value="Cinza">
-            <label for="ililas">Lilás</label>
-            <input type="radio" name="cor" id="ililas" value="Lilás">
-            <label for="ilaranja">Laranja</label>
-            <input type="radio" name="cor" id="ilaranja" value="Laranja">
-        </fieldset>
+          <div class="selection">
+            <label for="rigidez">Rigidez</label>
+            <select name="rigidez" id="rigidez">
+              <option value="Rígido">Rígido</option>
+              <option value="Flexível">Flexível</option>
+            </select>
+          </div>
 
-        <fieldset>
-            <legend>Rigidez</legend>
-            <label for="irigido">Rígido</label>
-            <input type="radio" name="rigidez" id="irigido"  value="Rígido">
-            <label for="iflexivel">Flexível</label>
-            <input type="radio" name="rigidez" id="iflexivel" value="Flexível" checked>
-        </fieldset>
+          <div class="selection">
+            <label for="espessura">Espessura</label>
+            <select name="espessura" id="espessura">
+              <option value="Fino">Fino</option>
+              <option value="Médio">Médio</option>
+            </select>
+          </div>
 
-        <fieldset>
-            <legend>Espessura</legend>
-            <label for="ifino">Fino</label>
-            <input type="radio" name="espessura" id="ifino" checked value="Fino">
-            <label for="imedio">Médio</label>
-            <input type="radio" name="espessura" id="imedio" value="Médio">
-        </fieldset>
+          <div class="selection">
+            <label for="cor">Cor</label>
+            <select name="cor" id="cor">
+              <option value="Preto">Preto</option>
+              <option value="Branco">Branco</option>
+              <option value="Verde">Verde</option>
+              <option value="Vermelho">Vermelho</option>
+              <option value="Azul">Azul</option>
+              <option value="Amarelo">Amarelo</option>
+              <option value="Cinza">Cinza</option>
+              <option value="Lilás">Lilás</option>
+              <option value="Laranja">Laranja</option>
+            </select>
+          </div>
+        </div>
 
-        <p>
-            <input type="button" value="Verificar" onclick="cabo()">
-            <input type="reset" value="Limpar">
-        </p>
-    </form>
+        <button type="submit" id="submit-button" form="form">Verificar</button>
+        <button type="reset" id="reset-button" form="form">Limpar</button>
+      </form>
+    </div>
+
+    <div class="modal" id="modal">
+      <div class="modal-content">
+        <h1>Este é o seu cabo ideal</h1>
+        <div class="modal-result" id="resultados"></div>
+        <button id="fechar-modal">Sair</button>
+      </div>
+    </div>
+
+    <script
+      type="module"
+      src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"
+    ></script>
+    <script
+      nomodule
+      src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"
+    ></script>
 
     <script src="script.js"></script>
-</body>
+  </body>
 </html>
